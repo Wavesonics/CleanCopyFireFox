@@ -39,11 +39,11 @@ function cleanGenericUrl(urlStr) {
 	console.log("cleanGenericUrl");
 
 	const paramBlackList = [
-		"umt_source",
-		"umt_medium",
-		"umt_campaign",
-		"umt_term",
-		"umt_content"
+		"utm_source",
+		"utm_medium",
+		"utm_campaign",
+		"utm_term",
+		"utm_content"
 	];
 
 	var url = new URL(urlStr);
