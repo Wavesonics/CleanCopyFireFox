@@ -1,21 +1,53 @@
+const Mode = { 
+	SUPPORTED: 'supported',
+	TRACKINGREMOVED: 'tracking-removed',
+	COPIED: 'copied',
+ }
+
 function cleanTab(tabs) {
 	const tab = tabs[0];
 	const url = tab.url;
-
 	const page = getSupportedPage(url);
+
+	var mode = Mode.COPIED
 
 	var cleanUrl = null;
 	if(page != null)
 	{
 		cleanUrl = cleanSupportedUrl(page, url);
+		mode = Mode.SUPPORTED;
 	}
 	else
 	{
 		cleanUrl = cleanGenericUrl(tab.url);
+		if(tab.url.toString().length > cleanUrl.length)
+		{
+			mode = Mode.TRACKINGREMOVED;
+		}
+		else
+		{
+			mode = Mode.COPIED;
+		}
 	}
 
 	let delta = url.length - cleanUrl.length;
-	document.getElementById("status").textContent = "Characters Removed: " + delta;
+	let percent = ((cleanUrl.length / url.length) * 100.0).toFixed(1);
+	document.getElementById("status").innerHTML = "<strong>"+percent + "%</strong> reduction" + "<br /><span class=\"small\">" + delta + " characters removed</span>";
+
+	var modeStr = "";
+	switch(mode)
+	{
+		case Mode.SUPPORTED:
+			modeStr = "Supported Site";
+			break;
+		case Mode.TRACKINGREMOVED:
+			modeStr = "Tracking Removed";
+			break;
+		case Mode.TRACKINGREMOVED:
+			modeStr = "Copied";
+			break;
+	}
+	document.getElementById("method").textContent = modeStr + "!";
 
 	copyToClipboard(cleanUrl);
 }

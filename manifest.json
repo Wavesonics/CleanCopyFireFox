@@ -2,12 +2,15 @@
 
 	"manifest_version": 2,
 	"name": "Clean Copy",
-	"version": "1.0",
+	"version": "1.2",
   
 	"description": "Cleans up URLs for easy sharing. No URL shorteners needed!",
   
 	"icons": {
-	  "48": "icons/icon-48.png"
+	  "19": "images/icon19.png",
+	  "38": "images/icon38.png",
+	  "48": "images/icon48.png",
+	  "128": "images/icon128.png"
 	},
 
 	"permissions": [
@@ -17,7 +20,7 @@
 	  ],
 	
 	"browser_action": {
-		"default_icon": "icons/icon-48.png",
+		"default_icon": "images/icon48.png",
 		"default_title": "Clean Copy",
 		"default_popup": "popup/copy.html"
 	},

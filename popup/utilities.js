@@ -28,7 +28,7 @@ function getSupportedPage( url )
 function checkDomain( url, site )
 {
 	console.log("Checking domain: " + site.domain);
-	const domainRegex = new RegExp( "^(?:http|https):\/\/(?:www.)?" + site.domain + ".*$", "i" );
+	const domainRegex = new RegExp( "^(?:http|https):\/\/(?:.*\.)?" + site.domain + ".*$", "i" );
 	return domainRegex.test( url );
 }
 

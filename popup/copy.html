@@ -9,10 +9,33 @@
   <script src="utilities.js"></script>
   <script src="copy.js"></script>
 
+  <style>
+  body
+  {
+    margin:0;
+    padding:0;
+    font-family:"Arial";
+  }
+  .small
+  {
+    font-size: small;
+  }
+  .center
+  {
+    vertical-align: middle;
+  }
+  </style>
 </head>
 
 <body>
-	<div id="status">empty</div>
-	<h1>Copied</h1>
+  <table id="success">
+		<tr>
+			<td class="center"><img class="center" src="/images/checkMark.png" /></td>
+			<td class="center"><strong><div id="method">empty</div></strong></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div id="status">empty</div></td>
+    </tr>
+	</table>
 </body>
 </html>
