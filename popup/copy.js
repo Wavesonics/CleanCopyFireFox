@@ -31,7 +31,7 @@ function cleanTab(tabs) {
 	}
 
 	let delta = url.length - cleanUrl.length;
-	let percent = ((cleanUrl.length / url.length) * 100.0).toFixed(1);
+	let percent = ((1.0-(cleanUrl.length / url.length)) * 100.0).toFixed(1);
 	document.getElementById("status").innerHTML = "<strong>"+percent + "%</strong> reduction" + "<br /><span class=\"small\">" + delta + " characters removed</span>";
 
 	var modeStr = "";
@@ -43,7 +43,7 @@ function cleanTab(tabs) {
 		case Mode.TRACKINGREMOVED:
 			modeStr = "Tracking Removed";
 			break;
-		case Mode.TRACKINGREMOVED:
+		case Mode.COPIED:
 			modeStr = "Copied";
 			break;
 	}
