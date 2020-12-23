@@ -5,7 +5,7 @@ const supportedSites = [
 		[
 			{
 				captureGroups : 1,
-				capturePattern : /^(?:http|https):\/\/(?:www.)?youtube\.com\/watch\?(?:.*&)*v=([a-zA-Z0-9_-]+).*$/i,
+				capturePattern : /^(?:http|https):\/\/(?:www\.)?youtube\.com\/watch\?(?:.*&)*v=([a-zA-Z0-9_-]+).*$/i,
 				urlTemplate : "https://youtu.be/URL_ID_0_HERE"
 			}
 		]
@@ -16,12 +16,12 @@ const supportedSites = [
 		[
 			{
 				captureGroups : 1,
-				capturePattern : /^(?:http|https):\/\/(?:www.)?amazon\.com\/(?:.*\/)*dp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
+				capturePattern : /^(?:http|https):\/\/(?:.*\.)?amazon\.com\/(?:.*\/)*dp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
 				urlTemplate : "http://amazon.com/dp/URL_ID_0_HERE/"
 			},
 			{
 				captureGroups : 1,
-				capturePattern : /^(?:http|https):\/\/(?:www.)?amazon\.com\/(?:.*\/)*gp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
+				capturePattern : /^(?:http|https):\/\/(?:.*\.)?amazon\.com\/(?:.*\/)*gp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
 				urlTemplate : "http://amazon.com/gp/URL_ID_0_HERE/"
 			}
 		]
@@ -32,12 +32,12 @@ const supportedSites = [
 		[
 			{
 				captureGroups : 1,
-				capturePattern : /^(?:http|https):\/\/(?:www.)?amazon\.co\.uk\/(?:.*\/)*gp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
+				capturePattern : /^(?:http|https):\/\/(?:.*\.)?amazon\.co\.uk\/(?:.*\/)*gp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
 				urlTemplate : "http://amazon.co.uk/gp/URL_ID_0_HERE/"
 			},
 			{
 				captureGroups : 1,
-				capturePattern : /^(?:http|https):\/\/(?:www.)?amazon\.co\.uk\/(?:.*\/)*dp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
+				capturePattern : /^(?:http|https):\/\/(?:.*\.)?amazon\.co\.uk\/(?:.*\/)*dp\/((?:product\/)?[a-zA-Z0-9_-]+)(?:\/)*.*$/i,
 				urlTemplate : "http://amazon.co.uk/dp/URL_ID_0_HERE/"
 			}
 		]
