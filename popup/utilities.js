@@ -1,20 +1,20 @@
 function getSupportedPage( url )
 {
 	console.log("getSupportedPage: " + url);
-	var supportedPage = null
+	let supportedPage = null;
 
 	const site = findSite(url)
 	if( site !== null )
 	{
 		console.log("site found!");
 
-		for( var i in site.pages )
+		for(let i in site.pages )
 		{
-			var page = site.pages[i];
+			const page = site.pages[i];
 			console.log("checking page: " + page.urlTemplate);
-			var parts = getUrlParts( url, page );
+			const parts = getUrlParts(url, page);
 
-			if( parts !== null && parts.length == page.captureGroups + 1 )
+			if( parts !== null && parts.length === (page.captureGroups + 1) )
 			{
 				supportedPage = page;
 				break;
@@ -40,8 +40,8 @@ function getUrlParts( url, page )
 
 function findSite( url )
 {
-    var siteData = null;
-    for( var ii in supportedSites )
+	let siteData = null;
+	for(let ii in supportedSites )
     {
 		let site = supportedSites[ii];
         if( checkDomain(url, site) )

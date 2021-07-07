@@ -9,9 +9,9 @@ function cleanTab(tabs) {
 	const url = tab.url;
 	const page = getSupportedPage(url);
 
-	var mode = Mode.COPIED
+	let mode = Mode.COPIED;
 
-	var cleanUrl = null;
+	let cleanUrl = null;
 	if(page != null)
 	{
 		cleanUrl = cleanSupportedUrl(page, url);
@@ -34,7 +34,7 @@ function cleanTab(tabs) {
 	let percent = ((1.0-(cleanUrl.length / url.length)) * 100.0).toFixed(1);
 	document.getElementById("status").innerHTML = "<strong>"+percent + "%</strong> reduction" + "<br /><span class=\"small\">" + delta + " characters removed</span>";
 
-	var modeStr = "";
+	let modeStr = "";
 	switch(mode)
 	{
 		case Mode.SUPPORTED:
@@ -54,12 +54,12 @@ function cleanTab(tabs) {
 
 function cleanSupportedUrl(page, url) {
 	console.log("cleanSupportedUrl");
-	var parts = getUrlParts( url, page );
+	let parts = getUrlParts( url, page );
 
 	console.log("parts?");
 
-	var cleanUrl = page.urlTemplate;
-	for( var ii=0; ii<page.captureGroups; ++ii )
+	let cleanUrl = page.urlTemplate;
+	for( let ii=0; ii<page.captureGroups; ++ii )
 	{
 		cleanUrl = cleanUrl.replace( "URL_ID_"+ii+"_HERE", parts[ii+1] );
 	}
@@ -78,10 +78,10 @@ function cleanGenericUrl(urlStr) {
 		"utm_content"
 	];
 
-	var url = new URL(urlStr);
+	let url = new URL(urlStr);
 
-	for( ii in paramBlackList ) {
-		var param = paramBlackList[ii];
+	for(let ii in paramBlackList ) {
+		let param = paramBlackList[ii];
 		url.searchParams.delete(param);
 	}
 
@@ -97,9 +97,9 @@ function copyToClipboard(text) {
 	console.log(text);
 	
 	navigator.clipboard.writeText(text).then(function() {
-		console.log('Async: Copying to clipboard was successful!');
+		console.log('Copying to clipboard was successful!');
 	}, function(err) {
-		console.error('Async: Could not copy text: ', err);
+		console.error('Could not copy text: ', err);
 	});
 }
 
