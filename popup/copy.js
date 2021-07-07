@@ -89,7 +89,7 @@ function cleanGenericUrl(urlStr) {
 }
 
 function cleanUrl() {
-	browser.tabs.query({active: true}).then(cleanTab)
+	browser.tabs.query({active: true, currentWindow: true}).then(cleanTab)
 }
 
 function copyToClipboard(text) {
