@@ -86,7 +86,7 @@ const supportedSites = [
 		[
 			{
 				captureGroups : 1,
-				capturePattern : /	/i,
+				capturePattern : /^https:\/\/www\.audible\.com\/pd(?:\/[\w-]+)?\/(\w+).*$/i,
 				urlTemplate : "https://www.audible.com/pd/URL_ID_0_HERE"
 			}
 		]
@@ -96,9 +96,9 @@ const supportedSites = [
 		pages :
 		[
 			{
-				captureGroups : 2,
-				capturePattern : /^https:\/\/(.*)\.medium\.com\/(?:.*-([0-9a-z]+)).*$/i,
-				urlTemplate : "https://URL_ID_0_HERE.medium.com/URL_ID_1_HERE"
+				captureGroups : 1,
+				capturePattern : /^https:\/\/.*\.medium\.com\/.*-(\w+).*$/i,
+				urlTemplate : "https://URL_ID_0_HERE.medium.com/URL_ID_0_HERE"
 			}
 		]
 	},
@@ -112,5 +112,27 @@ const supportedSites = [
 				urlTemplate : "https://www.theverge.com/URL_ID_0_HERE/URL_ID_1_HERE/URL_ID_2_HERE/URL_ID_3_HERE"
 			}
 		]
+	},
+	{
+		domain : "redfin.com",
+		pages :
+			[
+				{
+					captureGroups : 2,
+					capturePattern : /^https:\/\/www\.redfin\.com\/(\w{2})(?:(?:\/[\w-]+)?){0,2}\/home\/(\d+).*$/i,
+					urlTemplate : "https://www.redfin.com/URL_ID_0_HERE/home/URL_ID_1_HERE"
+				}
+			]
+	},
+	{
+		domain : "zillow.com",
+		pages :
+			[
+				{
+					captureGroups : 1,
+					capturePattern : /^https:\/\/www\.zillow\.com\/homedetails(?:\/[\w-]+)?\/(\w+).*$/i,
+					urlTemplate : "https://www.zillow.com/homedetails/URL_ID_0_HERE"
+				}
+			]
 	}
 ];
