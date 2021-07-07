@@ -75,7 +75,11 @@ function cleanGenericUrl(urlStr) {
 		"utm_medium",
 		"utm_campaign",
 		"utm_term",
-		"utm_content"
+		"utm_content",
+		"fbclid", // facebook
+		"gclid", // google
+		"gclsrc", // google
+		"dclid" // double click
 	];
 
 	let url = new URL(urlStr);
